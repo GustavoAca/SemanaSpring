@@ -30,11 +30,15 @@ function Listing() {
       });
   }, [pageNumber]);
 
+  const handlePageChange = (newPageNumber : number) => {
+    setPageNumber(newPageNumber);
+  }
+
   //useEffect pega uma função e uma lista
 
   return (
     <>
-      <Pagination />
+      <Pagination page={page} onChange={handlePageChange} />
 
       <div className="container">
         <div className="row">
